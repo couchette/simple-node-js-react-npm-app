@@ -15,6 +15,7 @@ pipeline {
                 input message: 'Finished using the web site? (Click "Proceed" to continue)' 
                 sh './jenkins/scripts/kill.sh' 
             }
+        }
         stage("Publish") {
             sshPublisher(publishers: [sshPublisherDesc(configName: 'test0', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''apt-get install unzip
             cd /home
@@ -27,7 +28,6 @@ pipeline {
             ./install_docker.sh > install_docker.out
             ./build_and_run_docker.sh > build_and_run_docker.out
             ''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'simple-node-js-react-npm-app-master.zip')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
-            }
         }
     }
 }
