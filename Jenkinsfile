@@ -29,7 +29,7 @@ pipeline {
                 chmod +x build_and_run_docker.sh
                 ./install_docker.sh > install_docker.out
                 ./build_and_run_docker.sh > build_and_run_docker.out
-                ''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'simple-node-js-react-npm-app/simple-node-js-react-npm-app-master.zip')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
+                ''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'simple-node-js-react-npm-app-master.zip')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
             }
         }
     }
