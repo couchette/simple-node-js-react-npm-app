@@ -7,10 +7,11 @@ WORKDIR /usr/src/app
 # 复制整个项目到工作目录
 COPY . .
 RUN npm install --registry https://registry.npmmirror.com
+RUN npm install -g serve --registry https://registry.npmmirror.com
 
 
 # 构建应用
 RUN npm run build
 
 # 定义启动命令
-CMD [ "npm", "start" ]
+CMD [ "serve", "-s", "build" ]
