@@ -23,4 +23,3 @@ else
     sudo DEBIAN_FRONTEND=noninteractive apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin <<< $'Y\n'
     echo "Docker 安装完成。"
 fi
-sudo docker run hello-world
