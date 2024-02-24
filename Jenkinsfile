@@ -17,6 +17,7 @@ pipeline {
             }
         }
         stage("Publish") {
+            agent any
             steps {
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'test0', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''apt-get install unzip
                 cd /home
